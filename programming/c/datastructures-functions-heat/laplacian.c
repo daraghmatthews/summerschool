@@ -42,7 +42,13 @@ int main(void)
 
     // Evaluate the Laplacian
     // *INDENT-OFF*
-#error Add the missing part
+	for(i=1;i<NY-1;i++){
+		for(j=1;j<NX-1;j++){
+			laplacian[i][j] = (array[i-1][j] - 2.0 * array[i][j] + array[i+1][j]) / (DX * DY)
+			+ (array[i][j-1] - 2.0 * array[i][j] + array[i][j+1]) / (DX * DY)
+			
+		}
+	}
 
     // *INDENT-ON*
 

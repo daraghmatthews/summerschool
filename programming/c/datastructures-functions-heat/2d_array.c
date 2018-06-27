@@ -9,16 +9,28 @@ int main(void)
     int i, j;
     // Add here the definition for array with name 'array'
     // of size NX times NY (258x258)
-#error Define the array
+	double array[NX][NY];
 
     // Initialize first the zeros
-#error Initialize the zeros for interior
+	for(i=0;i<NX;i++){
+		for(j=0;j<NY;j++){
+			array[i][j] = 0;
+
+		}
+	}
 
     // Initial conditions for left and right
-#error add boundary conditions for left and right
+	for(i=0;i<NY;i++){
+		array[i][0] = 20.0;
+		array[NX][i] = 85.0;
+	}
 
     // and top and bottom boundaries
-#error add boundary conditions for top and bottom
+	for(j=1;j<NX;j++){
+		array[0][j] = 70.0;
+		array[NY][j] = 5.0;	
+
+	}
 
     return 0;
 }
