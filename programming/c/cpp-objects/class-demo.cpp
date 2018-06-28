@@ -5,10 +5,12 @@ public:
   // Two member variables, a and b
   int a, b;
 
-  // TODO: add here the member function
-  //       described in the exercise
-  
+  // print member function
+	void print_members() const{
+		printf("a is %i, b is %i\n", a, b);
+	};	
 };
+
 
 int main(void)
 {
@@ -16,8 +18,9 @@ int main(void)
   demo.a = 10;
   demo.b = 20;
 
-  // TODO: add here a call to the member
-  //       function
+  // call to the print member
+	demo.print_members();
+
   
   return 0;
 }

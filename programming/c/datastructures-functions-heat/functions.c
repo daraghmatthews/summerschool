@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "field.h"
-#include "pngwriter.h"
-
-
-#define DX 0.01
-#define DY 0.01
 
 
 void init_field(field *f, int nx, int ny){
@@ -80,15 +73,3 @@ void print_field(field *f){
 }
 
 
-// main method
-
-int main(void){
-
-	field f;
-
-	init_field(&f, NX, NY);
-	laplacian(&f);
-	print_field(&f);
-
-    	return 0;
-}
