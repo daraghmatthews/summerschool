@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <omp.h>
 
 #define NX 102400
 
@@ -19,12 +20,23 @@ int main(void)
      *   vecC = vecA + vecB
      */
 
+	#pragma omp parallel shared(vecA, vecB, vecC) private(i)
+	{	
+	#pragma omp for
+	for(i = 0; i < NX; i++){
+		vecC[i] = vecA[i] + vecB[i];
+	}
+	}
+
+
+
     sum = 0.0;
     /* Compute the check value */
     for (i = 0; i < NX; i++) {
         sum += vecC[i];
     }
-    printf("Reduction sum: %18.16f\n", sum);
+//    printf("Reduction sum: %18.16f\n", sum);
+    printf("Reduction sum: %.2f\n", sum);
 
     return 0;
 }
