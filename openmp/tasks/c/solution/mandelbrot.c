@@ -12,7 +12,7 @@
 #include "pngwriter.h"
 
 // Maximum number of iterations
-const int MAX_ITER_COUNT = 512;
+const int MAX_ITER_COUNT = 8192;
 // Marker for different iteration counts
 const int DIFF_ITER_COUNT = -1;
 // Maximum recursion depth
@@ -96,7 +96,7 @@ void mandelbrot_block(int *iter_counts, int w, int h, complex cmin,
 int main(int argc, char **argv)
 {
     // Picture size, should be power of two
-    const int w = 512;
+    const int w = 8192;
     const int h = w;
     int *iter_counts;
 

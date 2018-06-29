@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
+#include <omp.h>
 #include "heat.h"
 
 
