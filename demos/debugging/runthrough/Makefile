@@ -6,7 +6,7 @@ COMMONDIR=../../../heat/common
 
 ifeq ($(COMP),cray)
 CC=cc
-CCFLAGS=-O3 -I/appl/opt/libpng/include -I$(COMMONDIR)
+CCFLAGS=-g -I/appl/opt/libpng/include -I$(COMMONDIR)
 LDFLAGS=-L/appl/opt/libpng/lib
 LIBS=-lpng -lz
 endif

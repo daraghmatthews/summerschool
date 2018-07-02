@@ -36,9 +36,36 @@ int main(int argc, char *argv[])
     /* TODO: use a single collective communication call (and maybe prepare
      *       some parameters for the call) */
 
+//    answer for part (a)
+//    MPI_Bcast(sendbuf, 2 * NTASKS, MPI_INT, 0, MPI_COMM_WORLD);
+
+
+//    answer for part (b)
+//    MPI_Scatter(sendbuf, 2, MPI_INT, recvbuf, 2, MPI_INT, 0, MPI_COMM_WORLD);
+
+
+/*    answer for part (c)
+    int counts[] = {1, 1, 2, 4};
+    int displs[] = {0, 1, 2, 4};
+    MPI_Gatherv(sendbuf, counts[rank], MPI_INT, recvbuf, counts, displs, MPI_INT, 1, MPI_COMM_WORLD);
+*/
+
+
+//    answer for part (d)
+    MPI_Alltoall(sendbuf, 2, MPI_INT, recvbuf, 2, MPI_INT, MPI_COMM_WORLD);
+
+
+
     /* Print data that was received */
     /* TODO: add correct buffer */
-    print_buffers(printbuf, ..., 2 * NTASKS);
+
+//(a)    
+//    print_buffers(printbuf, sendbuf, 2 * NTASKS);
+
+//(b, c, d)    
+    print_buffers(printbuf, recvbuf, 2 * NTASKS);
+
+
 
     MPI_Finalize();
     return 0;
